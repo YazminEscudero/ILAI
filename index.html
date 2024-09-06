@@ -1,0 +1,202 @@
+<html><head><base href="https://ilai-massage.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ilai - Centro de Masajes</title>
+<style>
+  :root {
+    --petrol-green: #005f6a;
+    --light-petrol: #00848e;
+    --dark-petrol: #003f4a;
+    --cream: #f5f5dc;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
+    color: var(--dark-petrol);
+  }
+
+  header {
+    background-color: var(--petrol-green);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .hero {
+    height: 100vh;
+    background-image: url('https://example.com/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 95, 106, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .services {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .service-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .calendar {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  footer {
+    background-color: var(--petrol-green);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#calendar">Reservar</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Bienvenido a Ilai</h1>
+        <p>Tu centro de masajes para la relajación y el bienestar</p>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Nuestros Servicios</h2>
+      <a href="https://ilai-massage.com/servicios" class="service-button">Ver todos los servicios</a>
+      <div class="service-grid">
+        <div class="service-card">
+          <img alt="Masaje relajante con aceites esenciales" src="relaxing-massage.jpg" width="400" height="300">
+          <h3>Masaje Relajante</h3>
+          <p>Disfruta de un masaje suave que alivia el estrés y promueve la relajación profunda.</p>
+        </div>
+        <div class="service-card">
+          <img alt="Masaje deportivo para atletas" src="sports-massage.jpg" width="400" height="300">
+          <h3>Masaje Deportivo</h3>
+          <p>Ideal para atletas y personas activas, este masaje ayuda a recuperar y mejorar el rendimiento muscular.</p>
+        </div>
+        <div class="service-card">
+          <img alt="Masaje con piedras calientes" src="hot-stone-massage.jpg" width="400" height="300">
+          <h3>Masaje con Piedras Calientes</h3>
+          <p>Experimenta una profunda relajación y alivio muscular con nuestro masaje de piedras calientes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar" class="calendar">
+      <h2>Reserva tu cita</h2>
+      <div id="calendar"></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h2>Contacto</h2>
+    <p>Dirección: Calle Principal 123, Ciudad</p>
+    <p>Teléfono: +1 234 567 890</p>
+    <p>Email: info@ilai-massage.com</p>
+    <div class="social-icons">
+      <a href="https://facebook.com/ilai-massage" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/ilai-massage" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/ilai-massage" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        selectable: true,
+        select: function(info) {
+          alert('Fecha seleccionada: ' + info.startStr);
+          // Aquí puedes agregar la lógica para reservar una cita
+        }
+      });
+      calendar.render();
+    });
+  </script>
+</body></html>
